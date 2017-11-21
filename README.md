@@ -5,6 +5,7 @@ The task definitions in this repository are for popular applications whose code 
 
 ## Directory
  * [nginx](/nginx)
+ * [Wildfly](/wildfly)
 
 ## Getting Started
 To run task definitions in this repository you must:
