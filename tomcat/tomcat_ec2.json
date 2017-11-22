@@ -1,0 +1,27 @@
+{
+    "containerDefinitions": [
+        {
+            "essential": true,
+            "name": "tomcat-webserver",
+            "image": "tomcat",
+            "memory": 256,
+            "cpu": 1024,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 8080,
+                    "protocol": "tcp"
+                }
+            ],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "tomcat-container-logs",
+                    "awslogs-region": "us-west-2"
+                }
+            }
+        }
+    ],
+    "family": "tomcat-webserver",
+    "volumes": []
+}

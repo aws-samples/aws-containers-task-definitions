@@ -1,0 +1,28 @@
+{
+    "networkMode": "awsvpc",
+    "family": "gunicorn",
+    "containerDefinitions": [
+        {
+            "memory": 256,
+            "portMappings": [
+                {
+                    "hostPort": 5000,
+                    "containerPort": 5000,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true,
+            "name": "gunicorn",
+            "environment": [],
+            "image": "danriti/gunicorn-flask",
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/gunicorn",
+                    "awslogs-region": "us-west-2",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            }
+        }
+    ]
+}

@@ -6,6 +6,9 @@ The task definitions in this repository are for popular applications whose code 
 ## Directory
  * [nginx](/nginx)
  * [Wildfly](/wildfly)
+ * [Tomcat](/tomcat)
+ * [Gunicorn](/gunicorn)
+ * [Kibana](/kibana)
 
 ## Getting Started
 To run task definitions in this repository you must:

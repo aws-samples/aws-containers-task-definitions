@@ -1,0 +1,35 @@
+{  
+   "memory":"2048",
+   "networkMode":"awsvpc",
+   "cpu":"1024",
+   "family":"kibana",
+   "containerDefinitions":[  
+      {  
+         "portMappings":[  
+            {  
+               "hostPort":5601,
+               "containerPort":5601,
+               "protocol":"tcp"
+            }
+         ],
+         "essential":true,
+         "name":"kibana",
+         "environment":[  
+            {  
+               "name":"ELASTICSEARCH_URL",
+               "value":"<ES-URL>"
+            }
+         ],
+         "image":"docker.elastic.co/kibana/kibana:6.0.0",
+         "logConfiguration":{  
+            "logDriver":"awslogs",
+            "options":{  
+               "awslogs-group":"/ecs/kibana",
+               "awslogs-region":"us-west-2",
+               "awslogs-stream-prefix":"ecs"
+            }
+         },
+         "memoryReservation":1024
+      }
+   ]
+}
