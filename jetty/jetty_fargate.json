@@ -1,0 +1,35 @@
+{  
+   "memory":"1024",
+   "networkMode":"awsvpc",
+   "cpu":"512",
+   "family":"jetty",
+   "containerDefinitions":[  
+      {  
+         "portMappings":[  
+            {  
+               "hostPort":8080,
+               "containerPort":8080,
+               "protocol":"tcp"
+            },
+            {  
+               "hostPort":8443,
+               "containerPort":8443,
+               "protocol":"tcp"
+            }
+         ],
+         "essential":true,
+         "name":"jetty",
+         "image":"jetty",
+         "logConfiguration":{  
+            "logDriver":"awslogs",
+            "options":{  
+               "awslogs-group":"/ecs/jetty",
+               "awslogs-region":"us-west-2",
+               "awslogs-stream-prefix":"ecs"
+            }
+         },
+         "cpu":512,
+         "memoryReservation":1024
+      }
+   ]
+}
