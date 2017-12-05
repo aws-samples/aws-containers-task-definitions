@@ -1,6 +1,8 @@
 {
-    "networkMode": "awsvpc",
-    "family": "jetty",
+   "memory":"1024",
+   "networkMode":"awsvpc",
+   "cpu":"512",
+   "family":"jetty",
     "containerDefinitions": [
         {
             "memory": 512,
@@ -18,13 +20,12 @@
             ],
             "essential": true,
             "name": "jetty",
-            "ulimits": null,
             "image": "jetty",
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
                     "awslogs-group": "/ecs/jetty",
-                    "awslogs-region": "us-west-2",
+                    "awslogs-region": "us-east-1",
                     "awslogs-stream-prefix": "ecs"
                 }
             }

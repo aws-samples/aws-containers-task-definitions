@@ -1,9 +1,12 @@
 {
-    "networkMode": "awsvpc",
-    "family": "wildfly",
+   "memory":"1024",
+   "networkMode":"awsvpc",
+   "cpu":"512",
+   "family":"wildfly",
     "containerDefinitions": [
         {
-            "memory": 512,
+            "cpu":512,
+            "memory":1024,
             "portMappings": [
                 {
                     "hostPort": 8080,
@@ -18,7 +21,6 @@
             ],
             "essential": true,
             "name": "wildfly",
-            "ulimits": null,
             "image": "jboss/wildfly",
             "command": [
                 "/opt/jboss/wildfly/bin/standalone.sh",
@@ -31,7 +33,7 @@
                 "logDriver": "awslogs",
                 "options": {
                     "awslogs-group": "/ecs/wildfly",
-                    "awslogs-region": "us-west-2",
+                    "awslogs-region": "us-east-1",
                     "awslogs-stream-prefix": "ecs"
                 }
             }

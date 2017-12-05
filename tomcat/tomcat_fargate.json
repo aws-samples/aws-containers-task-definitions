@@ -5,7 +5,7 @@
         "logDriver": "awslogs",
         "options": {
           "awslogs-group": "/ecs/tomcat-container-logs",
-          "awslogs-region": "us-west-2",
+          "awslogs-region": "us-east-1",
           "awslogs-stream-prefix": "ecs"
         }
       },
@@ -23,6 +23,9 @@
       "name": "tomcat-webserver"
     }
   ],
+  "requiresCompatibilities": [
+      "FARGATE"
+   ], 
   "memory": "2048",
   "family": "tomcat-webserver",
   "networkMode": "awsvpc",

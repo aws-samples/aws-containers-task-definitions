@@ -1,10 +1,13 @@
 {
+    "memory":"2048",
+    "networkMode":"awsvpc",
+    "cpu":"1024"
     "containerDefinitions": [
         {
             "essential": true,
             "name": "tomcat-webserver",
             "image": "tomcat",
-            "memory": 256,
+            "memory": 2048,
             "cpu": 1024,
             "portMappings": [
                 {
@@ -17,11 +20,11 @@
                 "logDriver": "awslogs",
                 "options": {
                     "awslogs-group": "tomcat-container-logs",
-                    "awslogs-region": "us-west-2"
+                    "awslogs-group": "/ecs/tomcat-container-logs",
+                    "awslogs-region": "us-east-1"
                 }
             }
         }
     ],
-    "family": "tomcat-webserver",
-    "volumes": []
+    "family": "tomcat-webserver"
 }

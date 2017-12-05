@@ -3,6 +3,9 @@
    "networkMode":"awsvpc",
    "cpu":"1024",
    "family":"kibana",
+   "requiresCompatibilities": [
+      "FARGATE"
+   ], 
    "containerDefinitions":[  
       {  
          "portMappings":[  
@@ -20,16 +23,17 @@
                "value":"<ES-URL>"
             }
          ],
+         "cpu": 1024,
+         "memory": 2048,
          "image":"docker.elastic.co/kibana/kibana:6.0.0",
          "logConfiguration":{  
             "logDriver":"awslogs",
             "options":{  
                "awslogs-group":"/ecs/kibana",
-               "awslogs-region":"us-west-2",
+               "awslogs-region":"us-east-1",
                "awslogs-stream-prefix":"ecs"
             }
-         },
-         "memoryReservation":1024
+         }
       }
    ]
 }

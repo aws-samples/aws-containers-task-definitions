@@ -1,6 +1,8 @@
 {
-    "networkMode": "awsvpc",
-    "family": "gunicorn",
+   "memory":"1024",
+   "networkMode":"awsvpc",
+   "cpu":"512",
+   "family":"gunicorn",
     "containerDefinitions": [
         {
             "memory": 256,
@@ -19,7 +21,7 @@
                 "logDriver": "awslogs",
                 "options": {
                     "awslogs-group": "/ecs/gunicorn",
-                    "awslogs-region": "us-west-2",
+                    "awslogs-region": "us-east-1",
                     "awslogs-stream-prefix": "ecs"
                 }
             }
