@@ -1,7 +1,5 @@
 {
-    "memory":"2048",
-    "networkMode":"awsvpc",
-    "cpu":"1024"
+    "networkMode": "awsvpc",
     "containerDefinitions": [
         {
             "essential": true,
@@ -19,7 +17,6 @@
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
-                    "awslogs-group": "tomcat-container-logs",
                     "awslogs-group": "/ecs/tomcat-container-logs",
                     "awslogs-region": "us-east-1"
                 }
