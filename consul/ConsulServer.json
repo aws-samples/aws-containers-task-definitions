@@ -1,0 +1,45 @@
+{
+    "containerDefinitions": [
+      {
+        "command": [
+          "agent",
+          "-client=0.0.0.0",
+          "-server",
+          "-data-dir=/consul/data",
+          "-bootstrap",
+          "-ui"
+        ],
+        "cpu": 128,
+        "dockerLabels": {
+          "Name": "consulServer"
+        },
+        "entryPoint": [
+          "/usr/local/bin/docker-entrypoint.sh"
+        ],
+        "environment": [
+          {
+            "name": "CONSUL_BIND_INTERFACE",
+            "value": "eth0"
+          },
+          {
+            "name": "enable_debug",
+            "value": "true"
+          }
+        ],
+        "image": "consul",
+        "logConfiguration": {
+          "logDriver": "awslogs",
+          "options": {
+            "awslogs-group": "consul",
+            "awslogs-region": "us-east-2",
+            "awslogs-stream-prefix": "consulServer"
+          }
+        },
+        "memory": 256,
+        "memoryReservation": 64,
+        "name": "consulServer"
+      }
+    ],
+    "family" : "consulServer",
+    "networkMode" : "host"
+}
