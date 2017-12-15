@@ -9,6 +9,7 @@ The task definitions in this repository are for popular applications whose code 
  * [Tomcat](/tomcat)
  * [Gunicorn](/gunicorn)
  * [Kibana](/kibana)
+ * [Consul](/consul)
  * [Jetty](/jetty)
 
 ## Getting Started
