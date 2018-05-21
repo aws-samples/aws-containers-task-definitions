@@ -1,4 +1,7 @@
 {
+  "requiresCompatibilities": [
+    "EC2"
+  ],
   "containerDefinitions": [
     {
       "name": "nginx",
