@@ -1,4 +1,7 @@
 {
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
   "containerDefinitions": [
     {
       "name": "nginx",
@@ -12,18 +15,13 @@
           "protocol": "tcp"
         }
       ],
-      "logConfiguration": {
-          "logDriver": "awslogs",
-          "options": {
-              "awslogs-group": "awslogs-nginx-ecs",
-              "awslogs-region": "us-east-1",
-              "awslogs-stream-prefix": "nginx"
-          }
-      }
+      "logConfiguration": null
     }
   ],
   "volumes": [],
-  "networkMode": "bridge",
+  "networkMode": "awsvpc",
   "placementConstraints": [],
-  "family": "nginx"
+  "family": "nginx",
+  "memory": "512",
+  "cpu": "256"
 }
