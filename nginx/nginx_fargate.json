@@ -15,7 +15,14 @@
           "protocol": "tcp"
         }
       ],
-      "logConfiguration": null
+      "logConfiguration":{
+            "logDriver":"awslogs",
+            "options":{
+               "awslogs-group":"awslogs-nginx-ecs",
+               "awslogs-region":"us-east-1",
+               "awslogs-stream-prefix":"ecs"
+            }
+      }
     }
   ],
   "volumes": [],
