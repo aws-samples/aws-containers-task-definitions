@@ -6,8 +6,8 @@
     {
       "name": "nginx",
       "image": "nginx:latest",
-      "memory": "256",
-      "cpu": "256",
+      "memory": 256,
+      "cpu": 256,
       "essential": true,
       "portMappings": [
         {
