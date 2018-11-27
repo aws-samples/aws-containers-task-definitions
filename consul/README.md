@@ -13,7 +13,7 @@ There are some Task Definition [constraints](http://docs.aws.amazon.com/AmazonEC
 ### Steps to Run:
 * Have an active [AWS account](https://portal.aws.amazon.com/billing/signup#/start).
 * Create an [Amazon ECS cluster](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/create_cluster.html).
-* Tag the insatnces in the cluster with:  
+* Tag the instances in the cluster with:  
 `key=consul value=member`
 * These task definitions are templates that can then be pasted into the AWS console JSON input area or saved to a file and used with the AWS CLI.  To create the Task Definitions using CLI run the following commands.  
 For Consul server:  
